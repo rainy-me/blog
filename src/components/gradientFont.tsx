@@ -5,7 +5,7 @@ export default styled.span`
   font-size: inherit;
   padding: 1rem;
   font-family: ${fonts.title};
-  filter: drop-shadow(0 0 3px #000);
+  filter: ${props => props.theme.titleFilter};
   width: fit-content;
   display: inline-block;
   font-weight: normal;

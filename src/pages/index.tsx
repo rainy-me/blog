@@ -12,7 +12,7 @@ const H1 = styled.h1`
   margin-bottom: 2rem;
   padding: 1rem;
   font-family: ${fonts.title};
-  filter: drop-shadow(0 0 3px #000);
+  filter: ${props => props.theme.titleFilter};
   width: fit-content;
   display: inline-block;
   font-weight: normal;
@@ -44,17 +44,12 @@ const Nav = styled.ul`
 const NavLink = styled.div`
   transition: ${animation.fastIn};
   background-size: 200%, 150%;
-  background-image: linear-gradient(
-    105deg,
-    #333 calc(47% - 1px),
-    #00bcd4 47%,
-    #90a4ae
-  );
+  background-image: ${props => props.theme.navBackground};
   color: #fff;
   font-size: 1.4rem;
   border-radius: 10px;
   text-shadow: 0 0 5px #000;
-  box-shadow: 0 5px 5px #000;
+  box-shadow: ${props => props.theme.navShadow};
   cursor: pointer;
   padding: 0.3rem;
   margin: 0.5rem 0;
@@ -71,8 +66,8 @@ const NavLink = styled.div`
   }
 `
 const Callout = styled.blockquote`
-  color: #fff;
-  text-shadow: 0 0 3px #000;
+  color: ${props => (props.theme.isDark ? "#fff" : "#272343")};
+  text-shadow: ${props => (props.theme.isDark ? "0 0 3px #000" : "")};
 `
 
 export default function IndexPage() {

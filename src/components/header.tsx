@@ -1,15 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { colors } from "../theme"
 
 const GlobalHeader = styled.header`
-  background: ${colors.black};
-  box-shadow: 0 0 3px #000;
+  background: ${props => (props.theme.isDark ? "#333" : "#bae8e8")};
+  box-shadow: ${props =>
+    props.theme.isDark ? "0 0 3px #000" : "0 0 3px #272343"};
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  color: #ccc;
+  color: ${props => (props.theme.isDark ? "#ccc" : "#333")};
   text-align: left;
   font-size: 1rem;
   padding: 0.5rem;

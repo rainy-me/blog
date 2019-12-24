@@ -7,7 +7,6 @@ import { animation } from "../../theme"
 const CourseItem = styled.div`
   transition: ${animation.fastIn};
   position: relative;
-  box-shadow: 1px 1px 1rem #000;
   padding: 10px;
   padding-bottom: 3rem;
   margin-bottom: 1rem;
@@ -15,12 +14,8 @@ const CourseItem = styled.div`
   height: 6rem;
   transition: ${animation.fastIn};
   background-size: 200%, 150%;
-  background-image: linear-gradient(
-    100deg,
-    #333 calc(47% - 1px),
-    #00bcd4 47%,
-    #90a4ae
-  );
+  background-image: ${props => props.theme.navBackground};
+  box-shadow: ${props => props.theme.navShadow};
   border-radius: 10px;
   text-shadow: 0 0 5px #000;
   cursor: pointer;

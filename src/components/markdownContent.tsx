@@ -11,7 +11,7 @@ export default styled(CodeBlock)`
   max-width: 1000px;
   word-break: break-all;
   width: 90%;
-  color: #ccc;
+  color: ${props => (props.theme.isDark ? "#ccc" : "#111")};
   font-family: "Fira Code";
   h2,
   h3,
@@ -19,7 +19,7 @@ export default styled(CodeBlock)`
   h5,
   h6 {
     margin-top: 3rem;
-    color: #eee;
+    color: ${props => (props.theme.isDark ? "#eee" : "#000")};
     position: relative;
     &::before {
       content: "○";
@@ -50,7 +50,7 @@ export default styled(CodeBlock)`
     margin: 2rem auto;
     max-width: 100%;
     object-fit: contain;
-    opacity: 0.8;
+    opacity: ${props => (props.theme.isDark ? 0.8 : 1)};
     &:hover {
       opacity: 1;
     }
@@ -97,6 +97,7 @@ export default styled(CodeBlock)`
     background-color: #333;
   }
   code {
+    color: ${props => (props.theme.isDark ? "#000" : "#fff")};
     text-shadow: 0 0 5px #000;
     word-break: break-word;
     border-radius: 5px;

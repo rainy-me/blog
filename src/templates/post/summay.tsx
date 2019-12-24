@@ -7,16 +7,11 @@ const PostTitle = styled.h3`
   background-size: 200%, 150%;
   text-shadow: 0 0 5px #000;
   border-radius: 10px;
-  box-shadow: 0 5px 3px #151515;
   cursor: pointer;
   padding: 0.3rem;
   padding-left: 0.8rem;
-  background-image: linear-gradient(
-    105deg,
-    #333 calc(47% - 1px),
-    #00bcd4 47%,
-    #90a4ae
-  );
+  background-image: ${props => props.theme.navBackground};
+  box-shadow: ${props => props.theme.navShadow};
   transform: rotate(2deg);
   &:hover {
     background-position: 100%, 5%;
@@ -32,7 +27,8 @@ const PostContent = styled.div`
   z-index: 1;
   transition: 0.3s all ease-in-out;
   border-radius: 10px;
-  background-color: #1d1d1d;
+  background-color: ${props =>
+    props.theme.isDark ? "#1d1d1d" : "transparent"};
   padding: 5px 40px 10px 40px;
   position: relative;
   cursor: pointer;
